@@ -1,0 +1,16 @@
+<!-- templates/absences/liste_etudiants.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des étudiants</title>
+</head>
+<body>
+    <h1>Liste des étudiants</h1>
+    <ul>
+        {% for etudiant in etudiants %}
+            <li>{{ etudiant.nom }} {{ etudiant.prenom }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

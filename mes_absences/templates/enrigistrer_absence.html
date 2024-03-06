@@ -1,0 +1,29 @@
+<!-- templates/absences/enregistrer_absence.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Enregistrer une absence</title>
+</head>
+<body>
+    <h1>Enregistrer une absence</h1>
+    <form action="{% url 'enregistrer_absence' %}" method="post">
+        {% csrf_token %}
+        <label for="etudiant">Étudiant:</label>
+        <select name="etudiant" id="etudiant">
+            {% for etudiant in etudiants %}
+                <option value="{{ etudiant.id }}">{{ etudiant.nom }} {{ etudiant.prenom }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="cours">Cours:</label>
+        <select name="cours" id="cours">
+            {% for cours in cours %}
+                <option value="{{ cours.id }}">{{ cours.nom }} - {{ cours.date }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="justifiee">Justifiée:</label>
+        <input type="checkbox" name="justifiee" id="justifiee"><br>
+        <input type="submit" value="Enregistrer">
+    </form>
+</body>
+</html>

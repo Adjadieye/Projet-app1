@@ -1,0 +1,16 @@
+<!-- templates/absences/liste_cours.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des cours</title>
+</head>
+<body>
+    <h1>Liste des cours</h1>
+    <ul>
+        {% for cours in cours %}
+            <li>{{ cours.nom }} - {{ cours.date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
