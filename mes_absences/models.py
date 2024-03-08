@@ -25,4 +25,4 @@ class Absence(models.Model):
     def _str_(self):
         return f"Absence de {self.etudiant} au cours de {self.cours}"
 
-
+ 
